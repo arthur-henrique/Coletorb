@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Timer : Pontos
 {
-    public GameObject timeBar;
     private RectTransform width;
     public static float timeBarWidth = 350f;
     public static bool isZero = false;
@@ -21,18 +20,13 @@ public class Timer : Pontos
     // Start is called before the first frame update
     void Start()
     {
-        width = timeBar.GetComponent<RectTransform>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!isZero)
-            width.sizeDelta = new Vector2(timeBarWidth -= Time.deltaTime*35f, 225.0f);
-
-
-        if(SliderTimer.slider.value <= 0)
+            if(SliderTimer.slider.value <= 0)
             isZero = true;
 
         if(isZero == true)

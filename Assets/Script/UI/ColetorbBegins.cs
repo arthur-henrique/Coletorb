@@ -55,7 +55,6 @@ public class ColetorbBegins : MonoBehaviour
         catcher.GetComponent<Transform>().transform.position = new Vector3(0, -2.5f,0);
         catcher.GetComponent<Transform>().transform.rotation = Quaternion.identity;
         Pontos.placar = 0; 
-        Timer.timeBarWidth = 350f;
         placarFinal.SetActive(false);
         highScore.SetActive(false);
         sliderObj.SetActive(true);

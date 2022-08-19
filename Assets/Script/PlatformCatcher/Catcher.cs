@@ -12,9 +12,6 @@ public class Catcher : MonoBehaviour
     private float speedMod = 0.0075f;
     private float flutMod = 0.002f;
     private float zSwing = 0.08f;
-
-
-    // Start is called before the first frame update
     
     // Update is called once per frame
     void Update()
