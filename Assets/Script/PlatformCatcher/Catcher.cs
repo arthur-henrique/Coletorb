@@ -6,11 +6,12 @@ public class Catcher : MonoBehaviour
 {
 
     private Touch touch;
-    private float speedMod = 0.01f;
+    Vector3 currentAngles;
+    Vector3 limitAngles;
+    Quaternion currentRotation;
+    private float speedMod = 0.0075f;
     private float flutMod = 0.002f;
-
-
-    // Start is called before the first frame update
+    private float zSwing = 0.08f;
     
     // Update is called once per frame
     void Update()
@@ -35,8 +36,15 @@ public class Catcher : MonoBehaviour
                     transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speedMod,
                     transform.position.y + touch.deltaPosition.x * flutMod,
                     transform.position.z);
+                    currentAngles += new Vector3(0, 0, touch.deltaPosition.x * zSwing);
+                    currentRotation.eulerAngles = currentAngles;
+                    transform.rotation = currentRotation;
+
                     if(transform.position.x > 1.3f)
-                        transform.position = new Vector3(1.3f, -2.27f, transform.position.z);
+                    {
+                        transform.position = new Vector3(1.3f, -2.16f, transform.position.z);
+                        currentAngles = new Vector3(0,0, 15);
+                    }
                 }
                 if(transform.position.x <0)
                 {
@@ -45,15 +53,24 @@ public class Catcher : MonoBehaviour
                         transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speedMod,
                         transform.position.y - touch.deltaPosition.x * flutMod,
                         transform.position.z);
+                        currentAngles += new Vector3(0, 0, touch.deltaPosition.x * zSwing);
+                        currentRotation.eulerAngles = currentAngles;
+                        transform.rotation = currentRotation;
                     }
                     if(touch.deltaPosition.x < transform.position.x && transform.position.x <= 0)
                     {
                         transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speedMod,
                         transform.position.y - touch.deltaPosition.x * flutMod,
                         transform.position.z);
+                        currentAngles += new Vector3(0, 0, touch.deltaPosition.x * zSwing);
+                        currentRotation.eulerAngles = currentAngles;
+                        transform.rotation = currentRotation;
 
                         if (transform.position.x <= -1.3f)
-                            transform.position = new Vector3(-1.3f, -2.27f, transform.position.z);
+                        {
+                            transform.position = new Vector3(-1.3f, -2.16f, transform.position.z);
+                            currentAngles = new Vector3(0,0, -15);
+                        }
                     }
                 }
 

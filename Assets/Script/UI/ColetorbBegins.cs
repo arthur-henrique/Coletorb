@@ -16,6 +16,7 @@ public class ColetorbBegins : MonoBehaviour
     public GameObject placarFinal;
     public GameObject catcher;
     public GameObject sliderObj;
+    public GameObject highScore;
 
 
     // Start is called before the first frame update
@@ -32,6 +33,8 @@ public class ColetorbBegins : MonoBehaviour
         logo.SetActive(false);
         menuText[0].SetActive(true);
         menuText[1].SetActive(true);
+        highScore.GetComponent<Text>().text = "Melhor Placar: " + PlayerPrefs.GetInt("MelhorPlacar", 0).ToString();
+        highScore.SetActive(true);
         tapButton.SetActive(true);
 
     }
@@ -41,6 +44,7 @@ public class ColetorbBegins : MonoBehaviour
         tapButton.SetActive(false);
         menuText[0].SetActive(false);
         menuText[1].SetActive(false);
+        highScore.SetActive(false);
         splashBackGround.GetComponent<Animator>().Play("SplashFadeOut");
         StartCoroutine(StartGame());
     }
@@ -49,9 +53,10 @@ public class ColetorbBegins : MonoBehaviour
     IEnumerator StartGame()
     {
         catcher.GetComponent<Transform>().transform.position = new Vector3(0, -2.5f,0);
+        catcher.GetComponent<Transform>().transform.rotation = Quaternion.identity;
         Pontos.placar = 0; 
-        Timer.timeBarWidth = 350f;
         placarFinal.SetActive(false);
+        highScore.SetActive(false);
         sliderObj.SetActive(true);
         yield return new WaitForSeconds(1);
         splashBackGround.SetActive(false);

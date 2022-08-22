@@ -5,14 +5,20 @@ using UnityEngine;
 public class OrbGen : MonoBehaviour
 {
     public Orb[] orbs;
-    public OrbThrower[] thrower;
+    public Transform[] launchPos;
     public bool canGenOrb = false;
     public float genCD = 1.5f;
 
     private int randomShooter;
     private int randomOrb;
+    OrbPooling orbPooler;
 
-    void Update()
+    void Start()
+    {
+        orbPooler = OrbPooling.Instance;
+    }
+
+    void FixedUpdate()
     {   
         if (!canGenOrb)
         {
@@ -30,7 +36,12 @@ public class OrbGen : MonoBehaviour
         {
             if(i == randomShooter)
             {
-                thrower[i].Throw(orbs[randomOrb]);
+                if (randomOrb == 0)
+                    orbPooler.spawnFromPool("Banana", launchPos[randomShooter].transform.position, Quaternion.identity);
+                if (randomOrb == 1)
+                    orbPooler.spawnFromPool("Pear", launchPos[randomShooter].transform.position, Quaternion.identity);
+                if (randomOrb == 2)
+                    orbPooler.spawnFromPool("Apple", launchPos[randomShooter].transform.position, Quaternion.identity);
                 yield return new WaitForSeconds(genCD);
             }
         }

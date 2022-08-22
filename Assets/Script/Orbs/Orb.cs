@@ -2,24 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Orb : MonoBehaviour
+public class Orb : MonoBehaviour, IPooledObject
 {
-    private float life = 7f;
 
-    void Awake()
-    {
-        Destroy(gameObject, life);
-    }
+    public float upForce = 10f;
+    public float sideForce = 2f;
 
-    void Update()
+    public void OnObjectSpawn()
     {
-        if(SliderTimer.slider.value <= 0)
-            Destroy(gameObject);
+        float xForce = Random.Range(-sideForce, sideForce);
+        float yForce = Random.Range(upForce / 2f, upForce);
+
+        Vector3 force = new Vector3 (xForce, yForce, 0);
+        GetComponent<Rigidbody>().velocity = force;
     }
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Catcher")
-            Destroy(gameObject);
+        {
+            gameObject.SetActive(false);
+        }
     }
 
 }
