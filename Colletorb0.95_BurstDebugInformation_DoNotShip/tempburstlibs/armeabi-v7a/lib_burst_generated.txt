@@ -142,7 +142,6 @@ Library: lib_burst_generated
 --root-assembly=C:\Users\arthu\HyperTest\Temp\StagingArea\Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll
 --root-assembly=C:\Users\arthu\HyperTest\Temp\StagingArea\Data\Managed\Unity.Services.Core.Environments.Internal.dll
 --root-assembly=C:\Users\arthu\HyperTest\Temp\StagingArea\Data\Managed\Unity.Burst.dll
---root-assembly=C:\Users\arthu\HyperTest\Temp\StagingArea\Data\Managed\Unity.TextMeshPro.dll
 --root-assembly=C:\Users\arthu\HyperTest\Temp\StagingArea\Data\Managed\Unity.Timeline.dll
 --root-assembly=C:\Users\arthu\HyperTest\Temp\StagingArea\Data\Managed\Unity.Services.Core.dll
 --root-assembly=C:\Users\arthu\HyperTest\Temp\StagingArea\Data\Managed\Unity.RenderPipeline.Universal.ShaderLibrary.dll
