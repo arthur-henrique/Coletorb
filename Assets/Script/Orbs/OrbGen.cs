@@ -12,6 +12,7 @@ public class OrbGen : MonoBehaviour
     private int randomShooter;
     private int randomOrb;
     OrbPooling orbPooler;
+    Quaternion randomRot;
 
     void Start()
     {
@@ -25,6 +26,7 @@ public class OrbGen : MonoBehaviour
             canGenOrb = true;
             randomShooter = Random.Range(0, 4);
             randomOrb = Random.Range(0, 3);
+            randomRot = Quaternion.Euler(Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f), Random.Range(0.0f, 360.0f));
             
             StartCoroutine(OrbFalling());
         }
@@ -37,11 +39,11 @@ public class OrbGen : MonoBehaviour
             if(i == randomShooter)
             {
                 if (randomOrb == 0)
-                    orbPooler.spawnFromPool("Banana", launchPos[randomShooter].transform.position, Quaternion.identity);
+                    orbPooler.spawnFromPool("Banana", launchPos[randomShooter].transform.position, randomRot);
                 if (randomOrb == 1)
-                    orbPooler.spawnFromPool("Pear", launchPos[randomShooter].transform.position, Quaternion.identity);
+                    orbPooler.spawnFromPool("Pear", launchPos[randomShooter].transform.position, randomRot);
                 if (randomOrb == 2)
-                    orbPooler.spawnFromPool("Apple", launchPos[randomShooter].transform.position, Quaternion.identity);
+                    orbPooler.spawnFromPool("Apple", launchPos[randomShooter].transform.position, randomRot);
                 yield return new WaitForSeconds(genCD);
             }
         }

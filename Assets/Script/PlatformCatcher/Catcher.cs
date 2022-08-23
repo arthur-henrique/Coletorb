@@ -36,14 +36,16 @@ public class Catcher : MonoBehaviour
                     transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speedMod,
                     transform.position.y + touch.deltaPosition.x * flutMod,
                     transform.position.z);
+                    /*
                     currentAngles += new Vector3(0, 0, touch.deltaPosition.x * zSwing);
                     currentRotation.eulerAngles = currentAngles;
                     transform.rotation = currentRotation;
+                    */
 
                     if(transform.position.x > 1.3f)
                     {
                         transform.position = new Vector3(1.3f, -2.16f, transform.position.z);
-                        currentAngles = new Vector3(0,0, 15);
+                        //currentAngles = new Vector3(0,0, 15);
                     }
                 }
                 if(transform.position.x <0)
@@ -53,23 +55,27 @@ public class Catcher : MonoBehaviour
                         transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speedMod,
                         transform.position.y - touch.deltaPosition.x * flutMod,
                         transform.position.z);
+                        /*
                         currentAngles += new Vector3(0, 0, touch.deltaPosition.x * zSwing);
                         currentRotation.eulerAngles = currentAngles;
                         transform.rotation = currentRotation;
+                        */
                     }
                     if(touch.deltaPosition.x < transform.position.x && transform.position.x <= 0)
                     {
                         transform.position = new Vector3(transform.position.x + touch.deltaPosition.x * speedMod,
                         transform.position.y - touch.deltaPosition.x * flutMod,
                         transform.position.z);
+                        /*
                         currentAngles += new Vector3(0, 0, touch.deltaPosition.x * zSwing);
                         currentRotation.eulerAngles = currentAngles;
                         transform.rotation = currentRotation;
+                        */
 
                         if (transform.position.x <= -1.3f)
                         {
                             transform.position = new Vector3(-1.3f, -2.16f, transform.position.z);
-                            currentAngles = new Vector3(0,0, -15);
+                            //currentAngles = new Vector3(0,0, -15);
                         }
                     }
                 }
