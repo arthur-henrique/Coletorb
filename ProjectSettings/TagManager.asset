@@ -9,6 +9,7 @@ TagManager:
   - GreyOrb
   - Catcher
   - Wall
+  - Collector
   layers:
   - Default
   - TransparentFX

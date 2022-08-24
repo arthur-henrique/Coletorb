@@ -23,6 +23,10 @@ public class Orb : MonoBehaviour, IPooledObject
         {
             gameObject.SetActive(false);
         }
+        if(other.tag == "Collector")
+        {
+            gameObject.SetActive(false);
+        }
     }
 
 }

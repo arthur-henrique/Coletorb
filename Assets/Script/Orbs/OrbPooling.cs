@@ -56,7 +56,7 @@ public class OrbPooling : MonoBehaviour
 
         GameObject objectToSpawn = poolDictionary[tag].Dequeue();
         objectToSpawn.SetActive(true);
-        objectToSpawn.transform.position = position;
+        objectToSpawn.transform.position = new Vector3(position.x, position.y, 0);
         objectToSpawn.transform.rotation = rotation;
 
         IPooledObject pooledObj = objectToSpawn.GetComponent<IPooledObject>();

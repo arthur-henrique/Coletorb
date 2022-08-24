@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 524115378366308524}
   - component: {fileID: 4187614963618376529}
   - component: {fileID: 245577766989861131}
-  - component: {fileID: 6902519374007274375}
+  - component: {fileID: 3036337953141235254}
   m_Layer: 0
   m_Name: Banana with UV
   m_TagString: WhiteOrb
@@ -116,8 +116,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 8
   m_CollisionDetection: 0
---- !u!64 &6902519374007274375
-MeshCollider:
+--- !u!65 &3036337953141235254
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -126,7 +126,6 @@ MeshCollider:
   m_Material: {fileID: 13400000, guid: 23fbfed93746188439329515b4cbb27b, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6252325571940477550, guid: 41301192592d1af42b05f9b8d3edada5, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.04, y: 0.1, z: 0.19}
+  m_Center: {x: 0, y: 0, z: 0}

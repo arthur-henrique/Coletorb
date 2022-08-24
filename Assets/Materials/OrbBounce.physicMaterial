@@ -7,8 +7,8 @@ PhysicMaterial:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: OrbBounce
-  dynamicFriction: 0.55
-  staticFriction: 0.41
-  bounciness: 0.86
+  dynamicFriction: 0.3
+  staticFriction: 0.5
+  bounciness: 0.3
   frictionCombine: 1
   bounceCombine: 3
