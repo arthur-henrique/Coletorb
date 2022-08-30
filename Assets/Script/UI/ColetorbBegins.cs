@@ -9,7 +9,7 @@ public class ColetorbBegins : MonoBehaviour
     public GameObject logo;
     public GameObject[] menuText;
     public GameObject splashBackGround;
-    public AudioSource bgm;
+    public AudioSource bgm, appleSo, pearSo, bananaSo;
     public GameObject manager;
     public GameObject countDownText;
     public GameObject tapButton;
@@ -52,6 +52,9 @@ public class ColetorbBegins : MonoBehaviour
     public void Mute()
     {
         bgm.mute = !bgm.mute;
+        appleSo.mute = !appleSo.mute;
+        pearSo.mute = !pearSo.mute;
+        bananaSo.mute = !bananaSo.mute;
     }
 
     IEnumerator StartGame()

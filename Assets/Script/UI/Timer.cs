@@ -10,7 +10,7 @@ public class Timer : Pontos
     public static bool isZero = false;
     public GameObject splashBackGround;
     public GameObject manager;
-    public GameObject bgm;
+    public AudioSource bgm;
     public GameObject tapButton;
     public GameObject placarFinal;
     public GameObject tapToBeginText;
@@ -45,7 +45,7 @@ public class Timer : Pontos
             sliderObj.GetComponent<SliderTimer>().enabled = false;
             sliderObj.SetActive(false);
             manager.GetComponent<ObstaclesGen>().enabled = false;
-            bgm.SetActive(false);
+            bgm.Stop();
             splashBackGround.GetComponent<Animator>().Play("SplashFadeIn");
             yield return new WaitForSeconds(1.2f);
             placarFinal.GetComponent<Text>().text = "Placar: " + Pontos.placar;
