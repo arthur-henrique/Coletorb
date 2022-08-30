@@ -33,7 +33,7 @@ public class ColetorbBegins : MonoBehaviour
         logo.SetActive(false);
         menuText[0].SetActive(true);
         menuText[1].SetActive(true);
-        highScore.GetComponent<Text>().text = "Melhor Placar: " + PlayerPrefs.GetInt("MelhorPlacar", 0).ToString();
+        highScore.GetComponent<Text>().text = "Melhor\nPlacar\n" + PlayerPrefs.GetInt("MelhorPlacar", 0).ToString();
         highScore.SetActive(true);
         tapButton.SetActive(true);
 

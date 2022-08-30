@@ -50,7 +50,7 @@ public class Timer : Pontos
             yield return new WaitForSeconds(1.2f);
             placarFinal.GetComponent<Text>().text = "Placar: " + Pontos.placar;
             placarFinal.SetActive(true);
-            highScore.GetComponent<Text>().text = "Melhor Placar: " + PlayerPrefs.GetInt("MelhorPlacar", 0).ToString();
+            highScore.GetComponent<Text>().text = "Melhor\nPlacar\n" + PlayerPrefs.GetInt("MelhorPlacar", 0).ToString();
             highScore.SetActive(true);
             tapToBeginText.SetActive(true);
             yield return new WaitForSeconds(1);
