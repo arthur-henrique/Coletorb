@@ -9,7 +9,7 @@ public class ColetorbBegins : MonoBehaviour
     public GameObject logo;
     public GameObject[] menuText;
     public GameObject splashBackGround;
-    public GameObject bgm;
+    public AudioSource bgm;
     public GameObject manager;
     public GameObject countDownText;
     public GameObject tapButton;
@@ -49,6 +49,10 @@ public class ColetorbBegins : MonoBehaviour
         StartCoroutine(StartGame());
     }
 
+    public void Mute()
+    {
+        bgm.mute = !bgm.mute;
+    }
 
     IEnumerator StartGame()
     {
@@ -60,7 +64,7 @@ public class ColetorbBegins : MonoBehaviour
         sliderObj.SetActive(true);
         yield return new WaitForSeconds(1);
         splashBackGround.SetActive(false);
-        bgm.SetActive(true);
+        bgm.Play();
         countDownText.SetActive(true);
         yield return new WaitForSeconds(1);
         countDownText.GetComponent<Text>().text = "2";

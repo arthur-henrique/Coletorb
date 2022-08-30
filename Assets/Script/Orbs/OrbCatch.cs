@@ -7,10 +7,13 @@ public class OrbCatch : MonoBehaviour
     public AudioSource goldenOrbCatchFX;
     public AudioSource whiteOrbCatchFX;
     public AudioSource greyOrbCatchFX;
+    public ParticleSystem applePop, pearPop, bananaPop;
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "GoldenOrb")
         {
+            applePop.Play();
             goldenOrbCatchFX.Play();
             Pontos.placar += 3;
             if(Pontos.placar <= 150)
@@ -18,6 +21,7 @@ public class OrbCatch : MonoBehaviour
         }
         if(other.tag == "WhiteOrb")
         {
+            bananaPop.Play();
             whiteOrbCatchFX.Play();
             Pontos.placar += 2;
             if(Pontos.placar <= 150)
@@ -25,6 +29,7 @@ public class OrbCatch : MonoBehaviour
         }
         if(other.tag == "GreyOrb")
         {
+            pearPop.Play();
             greyOrbCatchFX.Play();
             Pontos.placar += 1;
             if(Pontos.placar <= 150)
