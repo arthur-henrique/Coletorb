@@ -17309,7 +17309,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Coletorb
+  m_Text: Fruixer
 --- !u!222 &1525199230
 CanvasRenderer:
   m_ObjectHideFlags: 0
